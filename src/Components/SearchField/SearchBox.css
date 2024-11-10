@@ -1,0 +1,11 @@
+.search{
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+    align-items: center;
+    /* height: 25px; */
+    /* width: 25px; */
+    margin-top: 3px;
+    color: royalblue;
+    cursor: pointer;
+}
