@@ -11,7 +11,7 @@ function SearchBox({ searchInput, setSearchInput , loading }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='bg-white w-max flex justify-center rounded-full items-center shadow-md border focus-within:border-blue-700'>
+    <form onSubmit={handleSubmit} className='bg-white w-max flex justify-center rounded-full items-center shadow-md focus-within:border focus-within:border-blue-700'>
       <label htmlFor="search-input" className="material-symbols-outlined search">search</label>
       <input
         id="search-input"

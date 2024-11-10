@@ -1,12 +1,16 @@
 import React from 'react';
 
 function MovieCard({ title, year, poster }) {
+  const defaultPoster = 'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/fb7fef67-6965-4775-b416-91661baa06d8/dd5be78d-ca35-4c9f-9d09-b09a6f3b2c95.png';
+
   return (
-    <div className='bg-white shadow-md rounded-lg overflow-hidden w-32 sm:w-36 md:w-48 lg:w-60 m-2 sm:m-4 hover:scale-105 duration-75'>
-      <img src={poster} alt={title} className='w-full h-36 sm:h-40 md:h-60 lg:h-80 object-cover object-top' />
-      <div className='p-2 sm:p-4'>
-        <h2 className='text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-1 sm:mb-2'>{title}</h2>
-        <p className='text-gray-700 text-xs sm:text-sm md:text-base'>{year}</p>
+    <div className='bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden w-28 sm:w-32 md:w-40 lg:w-44 m-2 sm:m-3 hover:scale-105 duration-75'>
+      <div className='relative w-full' style={{ paddingBottom: '150%' }}>
+        <img src={poster === 'N/A' ? defaultPoster : poster} alt={title} className='absolute top-0 left-0 w-full h-full object-cover object-top' />
+      </div>
+      <div className='p-2 sm:p-3'>
+        <h2 className='text-xs sm:text-sm md:text-base lg:text-base mb-1 text-gray-900 dark:text-white'>{title}</h2>
+        <p className='text-gray-700 dark:text-gray-400 text-xs sm:text-sm md:text-base'>{year}</p>
       </div>
     </div>
   );

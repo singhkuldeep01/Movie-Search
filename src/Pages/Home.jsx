@@ -1,38 +1,40 @@
-import React, { useEffect, useState } from 'react'
-import SearchBox from '../Components/SearchField/SearchBox'
+import React, { useEffect, useState } from 'react';
+import SearchBox from '../Components/SearchField/SearchBox';
 import MovieCards from '../Components/MovieCard/MovieCards';
 
-
 function Home() {
-    const [searchInput ,setSearchInput] = useState('spider man');
-    const [dataList , setDataList] = useState([]);
-    const [loading, setLoading] = useState(false);
-    async function fetchData() {
-      setLoading(true);
-      try {
-        const response = await fetch(`https://www.omdbapi.com/?s=${encodeURIComponent(searchInput)}&apikey=a11863ac`);
-        const data = await response.json();
-        if (data.Search) {
-          setDataList(data.Search);
-        } else {
-          setDataList([]);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
+  const [searchInput, setSearchInput] = useState('spider man');
+  const [dataList, setDataList] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  async function fetchData() {
+    setLoading(true);
+    try {
+      const response = await fetch(`https://www.omdbapi.com/?s=${encodeURIComponent(searchInput)}&apikey=a11863ac`);
+      const data = await response.json();
+      if (data.Search) {
+        setDataList(data.Search);
+      } else {
         setDataList([]);
       }
-      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setDataList([]);
     }
-    useEffect(()=>{
-        fetchData();
-    },[searchInput])
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [searchInput]);
+
   return (
-    <div className='flex w-full justify-center items-center mt-8 flex-col pt-24'>
-        <h1 className='text-3xl font-semibold mb-10'>Movie Search</h1>
-        <SearchBox searchInput={searchInput} setSearchInput={setSearchInput} loading = {loading} ></SearchBox>
-        <MovieCards movies={dataList} result={searchInput} loading={loading}></MovieCards>
+    <div className='flex w-full items-center flex-col pt-28 bg-gray-100 dark:bg-gray-900 min-h-screen pb-24'>
+      <h1 className='text-3xl font-semibold mb-10 text-gray-900 dark:text-white'>Movie Search</h1>
+      <SearchBox searchInput={searchInput} setSearchInput={setSearchInput} loading={loading} />
+      <MovieCards movies={dataList} result={searchInput} loading={loading} />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
