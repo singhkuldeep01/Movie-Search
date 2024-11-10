@@ -4,9 +4,9 @@ import './Spinner.css'; // Import the spinner CSS
 
 function MovieCards({ movies, result, loading }) {
   return (
-    <div className='mt-8 flex-col flex px-8 items-center'>
+    <div className='mt-10 flex-col flex px-8 items-center'>
       {movies.length ?  <p className='px-8'>Results: {result}</p> : null}
-      <div className='flex flex-wrap justify-center px-8'>
+      <div className='flex flex-wrap justify-center px-2 md:px-4 lg:px-7'>
         {loading ? (
           <div className='flex justify-center items-center'>
             <div className="spinner m-auto mt-24"></div> {/* Custom spinner */}
