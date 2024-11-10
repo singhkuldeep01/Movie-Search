@@ -5,7 +5,7 @@ function NavbarContainer() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className='flex-col h-max shadow-xl w-full px-10 py-6 md:py-6 gap-4 md:px-40 flex fixed top-0 left-0 z-50 bg-white'>
+    <div className='flex-col h-max shadow-xl w-full px-10 py-4 md:py-6 gap-4 md:px-40 flex fixed top-0 left-0 z-50 bg-white'>
         <div className='flex items-center justify-between h-full w-full'>
             <p className='text-3xl font-bold text-blue-700 cursor-pointer'>MovieZ</p>
             <a
