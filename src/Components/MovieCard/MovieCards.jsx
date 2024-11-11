@@ -2,7 +2,7 @@ import React from 'react';
 import MovieCard from './MovieCard';
 import './Spinner.css'; // Import the spinner CSS
 
-function MovieCards({ movies, result, loading }) {
+function MovieCards({ movies, result, loading , cardClickHandler}) {
   return (
     <div className='mt-10 flex-col flex px-8 items-center'>
       {movies.length ?  <p className='px-8 dark:text-white'>Results: {result}</p> : null}
@@ -19,6 +19,8 @@ function MovieCards({ movies, result, loading }) {
                 title={movie.Title}
                 year={movie.Year}
                 poster={movie.Poster}
+                cardClickHandler={cardClickHandler}
+                movieId={movie.imdbID}
               />
             ))
           ) : (
