@@ -43,9 +43,9 @@ function MovieDetails() {
           <img
             src={movieData.Poster}
             alt={`${movieData.Title} poster`}
-            className="w-1/2 sm:w-1/3 md:w-1/4 rounded-lg md:mb-0 sm:mb-4"
+            className="w-1/2 sm:w-1/3 md:w-1/4 rounded-lg md:mb-0 mb-4"
           />
-          <div className="md:ml-6 text-center md:text-left">
+          <div className="md:ml-6 text-center md:text-left ">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-200">
               {movieData.Title} ({movieData.Year})
             </h2>
