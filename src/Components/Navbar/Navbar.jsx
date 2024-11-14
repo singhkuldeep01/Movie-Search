@@ -49,7 +49,7 @@ function NavbarContainer() {
           >
             {isDarkMode ? '🌞' : '🌜'}
           </button>
-          <Menu />
+          <Menu setIsMenuOpen={setIsMenuOpen} />
         </div>
       </div>
       {isMenuOpen && 
