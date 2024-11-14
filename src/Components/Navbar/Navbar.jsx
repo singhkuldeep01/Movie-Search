@@ -54,7 +54,7 @@ function NavbarContainer() {
       </div>
       {isMenuOpen && 
       <div className='flex flex-col md:hidden text-lg text-blue-700 dark:text-white cursor-pointer h-full justify-center items-center w-full gap-2'>
-        <Menu />
+        <Menu setIsMenuOpen={setIsMenuOpen} />  
       </div>}
     </div>
   );
