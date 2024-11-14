@@ -1,8 +1,10 @@
 import React from 'react';
 
 function MovieCard({ title, year, poster , cardClickHandler , movieId }) {
-  const defaultPoster = 'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/fb7fef67-6965-4775-b416-91661baa06d8/dd5be78d-ca35-4c9f-9d09-b09a6f3b2c95.png';
 
+
+  
+  const defaultPoster = 'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/fb7fef67-6965-4775-b416-91661baa06d8/dd5be78d-ca35-4c9f-9d09-b09a6f3b2c95.png';
   return (
     <div onClick={()=>{
       cardClickHandler(movieId);
