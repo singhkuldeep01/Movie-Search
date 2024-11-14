@@ -1,5 +1,5 @@
 import React, { useEffect , useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 
 function MovieDetails() {
     const { id } = useParams();
@@ -27,7 +27,7 @@ function MovieDetails() {
             </div>
         )
     }
-
+    
     if(!movieData.Title) {
         return (
             <div className='dark:bg-slate-900 min-h-screen w-full pt-24'>
@@ -36,12 +36,13 @@ function MovieDetails() {
         )
     }
   return (
-   <div className="dark:bg-slate-900 min-h-screen w-full pt-28 dark:text-white bg-gray-100 pb-16 flex justify-center">
+   <div className="dark:bg-slate-900 flex-col min-h-screen w-full pt-28 dark:text-white bg-gray-100 pb-16 flex justify-center items-center">
+        
       <div className="bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg max-w-md sm:max-w-4 md:max-w-4xl lg:max-w-5xl mx-4 md:mx-16">
         {/* Poster and Title */}
         <div className="flex flex-col md:flex-row items-center">
           <img
-            src={movieData.Poster}
+          src={movieData.Poster !== 'N/A' ? movieData.Poster : defaultPoster}
             alt={`${movieData.Title} poster`}
             className="w-1/2 sm:w-1/3 md:w-1/4 rounded-lg md:mb-0 mb-4"
           />
