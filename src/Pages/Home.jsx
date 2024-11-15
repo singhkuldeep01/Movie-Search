@@ -5,37 +5,12 @@ import MovieCards from '../Components/MovieCard/MovieCards';
 
 
 function Home() {
-  console.log("home  page");
   const navigate = useNavigate();
   const [searchInput, setSearchInput] = useState('spider man');
   const [loading, setLoading] = useState(false);
 
-  // async function fetchData() {
-  //   setLoading(true);
-  //   try {
-  //     const response = await fetch(`https://www.omdbapi.com/?s=${encodeURIComponent(searchInput)}&apikey=a11863ac`);
-  //     const data = await response.json();
-  //     const totalResults = parseInt(data.totalResults);
-  //     setTotalPages(Math.ceil(totalResults / 10));
-  //     if (data.Search) {
-  //       setDataList(data.Search);
-  //     } else {
-  //       setDataList([]);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //     setDataList([]);
-  //   }
-  //   setLoading(false);
-  // }
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, [searchInput]);
-
   function movieCardClickHandler(movieId){
     navigate(`/Movie/${movieId}`);
-    console.log('Movie card clicked');
   }
 
   return (
