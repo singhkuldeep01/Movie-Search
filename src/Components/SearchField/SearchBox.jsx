@@ -20,7 +20,7 @@ function SearchBox({ searchInput, setSearchInput , loading }) {
         onChange={(e) => { setInputField(e.target.value) }}
         value={inputField}
       />
-      <button type='submit' className='text-white bg-blue-500 px-5 py-2 text-lg ml-2 hover:bg-blue-600 duration-75 rounded-full flex justify-center items-center'>
+      <button type='submit' className='text-white bg-blue-500 px-5 py-2 text-lg ml-2 hover:bg-blue-600 duration-75 rounded-tr-full rounded-br-full flex justify-center items-center min-w-24 lg:min-w-28'>
         {loading ? <span className="material-symbols-outlined animate-spin text-lg">autorenew</span> : 'Search'}
       </button>
     </form>
